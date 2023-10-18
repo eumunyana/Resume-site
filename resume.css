@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Default font size for screens wider than 768px */
+}
+
+.active-link {
+    font-weight: bold;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    background-color: #FFEBE8; /* Linen background */
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    display: flex;
+    padding: 40px;
+    height: 80px; /* Reduce the height of the navigation bar */
+    font-size: large;
+    margin-right: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: right; /* put them on the links on the right side, horizontally */
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #402D20;
+    font-family: 'Serif', serif;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #BAA286;
+    border-bottom: 2px solid;
+}
+
+nav::before {
+    content: "Resume";
+    font-weight: bold;
+    font-size: larger;
+    margin-right: 60%; /* Add some space between "Resume" and the navigation links */
+    top: 80px; /* Adjust the vertical position as needed */
+    left: 20%; /* Adjust the horizontal position as needed */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Add a text shadow for the 3D effect */
+    transition: text-shadow 0.3s; 
+}
+
+nav::before:hover {
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4); /* Increase the shadow on hover for a more pronounced effect */
+}
+
+.dropdown-icon {
+    display: none;
+}
+
+/*Media Query for screens up to 620px (typical for tablets)*/
+@media screen and (max-width: 768px) {
+    body {
+        max-width: 100%;
+        font-size: 14px; /* font size for smaller screens */
+    }
+
+    nav {
+        padding: 30px; /* Adjust navigation bar padding for smaller screens */
+        height: 60px; /* Adjust navigation bar height for smaller screens */
+    } 
+
+    .about-content {
+        padding: 10% 20px; /* Adjust padding for smaller screens */
+        width: auto;
+    }
+
+    /* Style for the dropdown button */
+    .dropdown-icon {
+        cursor: pointer;
+        display: block; /* Show the dropdown icon */
+        font-size: 24px; /* Adjust the font size as needed */
+        color: #402D20; /* Icon color */
+        position: absolute; /* Position the dropdown icon */
+        right: 20px; /* Adjust the right position as needed */
+        top: 20px; /* Adjust the top position as needed */
+        z-index: 101; /* Ensure it's above other content */
+        transition: transform 0.3s; /* Add a smooth transition effect */
+    }
+    
+    .dropdown-icon:hover {
+        transform: scale(1.2);
+    }
+    
+    /* Style for the dropdown content (hidden by default) */
+    .nav-links {
+        display:none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #FFEBE8;
+        list-style: none;
+        padding: 0;
+    }
+    
+    /* Style for individual links in the dropdown */
+    .nav-links li {
+        padding: 12px 16px;
+    }
+    
+    
+    /* Change link color on hover */
+    .nav-links a:hover {
+        display: block;
+    }  
+}
+
+section {
+    min-height: 100vh;
+    padding: 0px;
+}
+
+
+section#about {
+    background-color: #FFEBE8;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section#projects {
+    background-color: #FEE6E3;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+section#education {
+    background-color: #FDE0DF;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section#contact {
+    background-color: #FAD5D5;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* CSS for the circular image and positioning */
+.about-image {
+    text-align: left;
+    padding: 20px;
+}
+
+.about-image img {
+    border-radius: 100%; /* Creates a circular shape */
+    width: 250px; /* Adjust the width as needed */
+    height: 250px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensure the image fits the circle */
+}
+
+.about-image img {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Adjust the bounce height as needed */
+    }
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column; /* Change to column layout to stack the text vertically */
+    padding: 10% 60px; /* Add 5% space above and below, 20px left/right padding */
+}
+
+
+.about-content p {
+    margin: 0; /* Remove default margin */
+    font-size: 20px;
+    text-align: center;
+    font-family: arial;
+}
+
+#name {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+/* For the Projects Section */
+#projects {
+    background-color: #FEE6E3; /* Adjust the background color as needed */
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 60px; /* Add padding to the projects section */
+}
+
+table {
+    width: 100%; /* Make the table take up the full width of the container */
+    border-collapse: collapse; /* Remove default spacing between table cells */
+}
+
+th {
+    text-align: center; /* Center the content within table headers */
+    padding: 20px; /* Add padding to the header cells */
+}
+
+td {
+    text-align: center; /* Center the content within table data cells */
+    padding: 20px; /* Add padding to the data cells */
+}
+
+th img {
+    max-width: 80%; /* Ensure images within headers don't exceed the cell width */
+    height: auto;
+}
+
+/* Apply 3D effect to images */
+img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Add a shadow effect */
+    transition: transform 0.2s; /* Add a smooth transition for hover effect */
+}
+
+/* Add a hover effect to simulate 3D transformation */
+img:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
+}
+
+
+/* Style for the contact footer */
+#contact-footer {
+    background-color: #001B33; /* Change background color as needed */
+    color: white; /* Change text color as needed */
+    padding: 20px; /* Add padding to the footer */
+    text-align: center; /* Center the content */
+    font-size: 18px; /* Change font size as needed */
+}
+
+
+
