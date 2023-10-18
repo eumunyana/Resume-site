@@ -24,7 +24,7 @@ nav {
     z-index: 80;
     display: flex;
     padding: 40px;
-    height: 80px; /* Reduce the height of the navigation bar */
+    height: 80px; /* Reduces the height of the navigation bar */
     font-size: large;
     margin-right: 0;
 }
@@ -32,7 +32,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: right; /* put them on the links on the right side, horizontally */
+    justify-content: right; /* puts the navigation links on the right side of the screen, horizontally */
     gap: 30px;
 }
 
@@ -52,56 +52,46 @@ nav::before {
     content: "Resume";
     font-weight: bold;
     font-size: larger;
-    margin-right: 60%; /* Add some space between "Resume" and the navigation links */
-    top: 80px; /* Adjust the vertical position as needed */
-    left: 20%; /* Adjust the horizontal position as needed */
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Add a text shadow for the 3D effect */
+    margin-right: 60%; /* Adds some space between "Resume" and the navigation links */
+    top: 80px; /* Adjusts the vertical position as needed */
+    left: 20%; /* Adjusts the horizontal position as needed */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Adds a text shadow for the 3D effect */
     transition: text-shadow 0.3s; 
 }
 
-nav::before:hover {
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4); /* Increase the shadow on hover for a more pronounced effect */
-}
 
 .dropdown-icon {
     display: none;
 }
 
-/*Media Query for screens up to 620px (typical for tablets)*/
-@media screen and (max-width: 768px) {
-    body {
-        max-width: 100%;
-        font-size: 14px; /* font size for smaller screens */
-    }
 
+
+/*Media Query for screens up to 768px */
+@media screen and (max-width: 768px) and (min-width: 168px) {
     nav {
-        padding: 30px; /* Adjust navigation bar padding for smaller screens */
-        height: 60px; /* Adjust navigation bar height for smaller screens */
+        padding: 30px; /* Adjusts navigation bar padding for smaller screens */
+        height: 60px; /* Adjusts navigation bar height for smaller screens */
     } 
-
     .about-content {
-        padding: 10% 20px; /* Adjust padding for smaller screens */
+        padding: 10% 20px; /* Adjusts padding for smaller screens */
         width: auto;
     }
-
     /* Style for the dropdown button */
     .dropdown-icon {
         cursor: pointer;
-        display: block; /* Show the dropdown icon */
-        font-size: 24px; /* Adjust the font size as needed */
+        display: block; /* Shows the dropdown icon */
+        font-size: 24px; /* Adjusts the font size as needed */
         color: #402D20; /* Icon color */
-        position: absolute; /* Position the dropdown icon */
-        right: 20px; /* Adjust the right position as needed */
-        top: 20px; /* Adjust the top position as needed */
-        z-index: 101; /* Ensure it's above other content */
-        transition: transform 0.3s; /* Add a smooth transition effect */
+        position: absolute; /* Positions the dropdown icon */
+        right: 20px; /* Adjusts the right position as needed */
+        top: 20px; /* Adjusts the top position as needed */
+        z-index: 101; /* Ensures it's above other content */
+        transition: transform 0.3s; /* Adds a smooth transition effect */
     }
-    
     .dropdown-icon:hover {
         transform: scale(1.2);
     }
-    
-    /* Style for the dropdown content (hidden by default) */
+    /* Styles for the dropdown content (hidden by default) */
     .nav-links {
         display:none;
         flex-direction: column;
@@ -111,16 +101,22 @@ nav::before:hover {
         padding: 0;
     }
     
-    /* Style for individual links in the dropdown */
+    /* Styles for individual links in the dropdown */
     .nav-links li {
         padding: 12px 16px;
     }
     
-    
-    /* Change link color on hover */
+    /* Changes link color on hover */
     .nav-links a:hover {
         display: block;
     }  
+    
+    /* CSS for the circular image and positioning */
+    .about-image {
+        text-align: left;
+        padding: 5px;
+        width: 50%;
+    }
 }
 
 section {
@@ -162,9 +158,9 @@ section#contact {
 
 .about-image img {
     border-radius: 100%; /* Creates a circular shape */
-    width: 250px; /* Adjust the width as needed */
-    height: 250px; /* Adjust the height as needed */
-    object-fit: cover; /* Ensure the image fits the circle */
+    width: 250px; /* Adjusts the width as needed */
+    height: 250px; /* Adjusts the height as needed */
+    object-fit: cover; /* Ensures the image fits the circle */
 }
 
 .about-image img {
@@ -176,14 +172,14 @@ section#contact {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-5px); /* Adjust the bounce height as needed */
+        transform: translateY(-5px); /* Adjusts the bounce height as needed */
     }
 }
 
 .about-content {
     display: flex;
-    flex-direction: column; /* Change to column layout to stack the text vertically */
-    padding: 10% 60px; /* Add 5% space above and below, 20px left/right padding */
+    flex-direction: column; /* Changes to column layout to stack the text vertically */
+    padding: 10% 60px; /* Adds 5% space above and below, 20px left/right padding */
 }
 
 
@@ -201,25 +197,25 @@ section#contact {
 
 /* For the Projects Section */
 #projects {
-    background-color: #FEE6E3; /* Adjust the background color as needed */
+    background-color: #FEE6E3; /* Adjusts the background color to a nude pink */
     background-size: cover;
     background-attachment: fixed;
-    padding: 60px; /* Add padding to the projects section */
+    padding: 60px; /* Adds padding to the projects section */
 }
 
 table {
-    width: 100%; /* Make the table take up the full width of the container */
-    border-collapse: collapse; /* Remove default spacing between table cells */
+    width: 100%; /* Makes the table take up the full width of the container */
+    border-collapse: collapse; /* Removes default spacing between table cells */
 }
 
 th {
-    text-align: center; /* Center the content within table headers */
-    padding: 20px; /* Add padding to the header cells */
+    text-align: center; /* Centers the content within table headers */
+    padding: 20px; /* Adds padding to the header cells */
 }
 
 td {
-    text-align: center; /* Center the content within table data cells */
-    padding: 20px; /* Add padding to the data cells */
+    text-align: center; /* Centers the content within table data cells */
+    padding: 20px; /* Addss padding to the data cells */
 }
 
 th img {
@@ -227,15 +223,15 @@ th img {
     height: auto;
 }
 
-/* Apply 3D effect to images */
+/* Applies 3D effect to images */
 img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Add a shadow effect */
     transition: transform 0.2s; /* Add a smooth transition for hover effect */
 }
 
-/* Add a hover effect to simulate 3D transformation */
+/* Adds a hover effect to simulate 3D transformation */
 img:hover {
-    transform: scale(1.05); /* Scale up the image on hover */
+    transform: scale(1.05); /* Scales up the image on hover */
 }
 
 
@@ -244,16 +240,6 @@ footer {
     background-color: aliceblue; /* Background color for the footer */
     color: #402D20; /* Text color */
     text-align: center;
-}
-
-/* Style for the footer section on the left side*/
-footer {
-    background-color: aliceblue; /* Background color for the footer */
-    color: #402D20; /* Text color */
-    text-align: center;
-    background-image: url('your-image.jpg'); /* Add the path to your image */
-    background-size: cover; /* Ensure the image covers the entire background */
-    background-position: left; /* Adjust the position as needed */
 }
 
 /* Style for the footer content */
